@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --primary-500: "#2885FF",
+  --secondary-500: "#EF863E"
+}
+
+@layer base {
+  html {
+    font-family: "Poppins", "sans-serif";
+  }
+  body {
+    overflow-x: hidden;
+  }
+}
+
+
+ @layer components {
+  .input-box {
+    @apply w-full text-sm bg-transparent border-[1.5px] px-5 py-3 rounded mb-4 outline-none
+  }
+
+  .btn-primary {
+    @apply w-full text-sm bg-blue-500 text-white p-2 rounded my-1 cursor-pointer mt-2
+  }
+
+  .icon-btn {
+    @apply text-xl text-slate-300 cursor-pointer hover:text-blue-500
+  }
+
+  .input-label {
+    @apply text-xs text-slate-400
+  }
+ }
