@@ -16,6 +16,7 @@ mongoose.connect(config.connectionString);
 // Import the CORS middleware to allow requests from other origins (like a frontend on a different domain or port)
 
 const app = express();
+const port = process.env.PORT || 8000;
 
 app.use(express.json());
 
@@ -353,7 +354,7 @@ app.get("/search-notes/", authenticateToken, async (req, res) => {
   }
 });
 
-app.listen(8000, () => {
+app.listen(port, () => {
   console.log("Server running on port 8000");
 });
 
