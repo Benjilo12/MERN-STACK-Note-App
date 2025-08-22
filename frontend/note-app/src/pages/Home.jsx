@@ -211,7 +211,7 @@ function Home() {
       </div>
 
       <button
-        className="w-16 h-16 flex items-center justify-center rounded-2xl bg-blue-500 hover:bg-blue-600 fixed right-10 bottom-10"
+        className="w-16 h-16 flex items-center cursor-pointer justify-center rounded-2xl bg-blue-500 hover:bg-blue-600 fixed right-10 bottom-10"
         onClick={() => {
           setOpenAddEditModal({ isShown: true, type: "add", data: null });
         }}

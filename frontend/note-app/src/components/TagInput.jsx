@@ -39,8 +39,9 @@ function TagInput({ tags, setTags }) {
                 onClick={() => {
                   handleRemoveTag(tag);
                 }}
+                className="cursor-pointer"
               >
-                <IoMdClose />
+                <IoMdClose className="cursor-pointer" />
               </button>
             </span>
           ))}
@@ -57,7 +58,7 @@ function TagInput({ tags, setTags }) {
           onKeyDown={handleKeyDown}
         />
         <button
-          className="w-8 h-8 flex items-center justify-center rounded border border-blue-600 hover:bg-blue-700"
+          className="w-8 h-8 flex items-center justify-center rounded border cursor-pointer border-blue-600 hover:bg-blue-700"
           onClick={addNewTag}
         >
           <IoMdAdd className="text-2xl text-blue-700 hover:text-white dark:bg-blue-700 dark:text-gray-50 dark:hover:bg-blue-800" />

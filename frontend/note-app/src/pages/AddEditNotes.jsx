@@ -94,7 +94,7 @@ function AddEditNotes({
   return (
     <div className="relative ">
       <button
-        className="w-10 h-10  items-center justify-center absolute -top-3 -right-3 hover:bg-slate-500 dark:text-white"
+        className="w-10 h-10  items-center justify-center absolute -top-3 -right-3 cursor-pointer dark:text-white"
         onClick={onClose}
       >
         <IoMdClose className="text-xl text-slate-400" />
@@ -103,7 +103,7 @@ function AddEditNotes({
         <label className="input-label dark:text-gray-100">Title</label>
         <input
           type="text"
-          className="text-1xl text-slate-950 outline-none dark:placeholder:text-gray-300 dark:text-gray-400 dark:bg-gray-700 py-2 px-2"
+          className="text-1xl text-slate-950 outline-none dark:placeholder:text-gray-200 dark:text-gray-400 dark:bg-gray-700 py-2 px-2"
           placeholder="Go to Gym At 5"
           value={title}
           onChange={({ target }) => setTitle(target.value)}
@@ -113,7 +113,7 @@ function AddEditNotes({
         <label className="input-label dark:text-gray-100">CONTENT</label>
         <textarea
           type="text"
-          className="text-sm text-slate-950 outline-none bg-slate-50 p-2 rounded dark:bg-gray-700 dark:placeholder:text-gray-400 dark:text-gray-400"
+          className="text-sm text-slate-950 outline-none bg-slate-50 p-2 rounded dark:bg-gray-700 dark:placeholder:text-gray-400 dark:text-gray-200"
           placeholder="Content"
           rows={10}
           value={content}

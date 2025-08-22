@@ -2,35 +2,43 @@ import { useState } from "react";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { FaRegEyeSlash } from "react-icons/fa";
 
-function PasswordInput({ value, onChange, placeholder }) {
+function PasswordInput({
+  value,
+  onChange,
+  placeholder,
+  className,
+  onFocus,
+  onBlur,
+}) {
   const [isShowPassword, setIsPassword] = useState(false);
 
   const toggleShowPassword = () => {
     setIsPassword(!isShowPassword);
   };
+
   return (
-    <div className="flex items-center bg-transparent border-[1.5px] rounded mb-3">
+    <div className="relative">
       <input
         type={isShowPassword ? "text" : "password"}
-        className=" w-full text-sm bg-transparent px-3.5 py-3 rouded outline-none "
+        className={`w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 transition duration-200 ${className}`}
         value={value}
         onChange={onChange}
-        placeholder={placeholder || "password"}
+        placeholder={placeholder || "Enter your password"}
+        onFocus={onFocus}
+        onBlur={onBlur}
       />
 
-      {isShowPassword ? (
-        <MdOutlineRemoveRedEye
-          size={22}
-          className="text-blue-500 ml-5 mr-3 cursor-pointer"
-          onClick={toggleShowPassword}
-        />
-      ) : (
-        <FaRegEyeSlash
-          size={22}
-          className="text-black-500 ml-5 mr-3 cursor-pointer"
-          onClick={() => toggleShowPassword()}
-        />
-      )}
+      <button
+        type="button"
+        className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-300"
+        onClick={toggleShowPassword}
+      >
+        {isShowPassword ? (
+          <FaRegEyeSlash size={20} />
+        ) : (
+          <MdOutlineRemoveRedEye size={20} />
+        )}
+      </button>
     </div>
   );
 }
